@@ -98,16 +98,17 @@ let arrDisc2=[];
 async function findIdDisc2(idNum){
     const response = await fetch("https://jsonplaceholder.typicode.com/users/1/albums");
     dataDiscs = await response.json(); 
-    let flag=false; 
-    
+     
+    arrDisc2=[]
     dataDiscs.forEach(element => {
         for (const property in element) {
-            if(flag===true){
-            arrDisc2=[element[property]]
-            }
-            else if(flag===false)
+            
+            
+            
+            
             {if(element[property]===idNum){
                 flag=true;
+                arrDisc2=[element["title"]];
             }}
             ;
           }
